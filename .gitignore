@@ -191,7 +191,6 @@ ModelManifest.xml
 
 .vs
 .idea
-.vscode
 project.lock.json
 
 node_modules

@@ -1,0 +1,30 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "identifier": "build",
+            "label": "Build project",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/src/PunishmentPointsApp/PunishmentPointsApp.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+        "identifier": "test",
+        "label": "Test project",
+        "command": "dotnet",
+        "args": [
+            "test", 
+            "${workspaceFolder}/src/PunishmentPointsApp.Tests/PunishmentPointsApp.Tests.csproj",
+        ],
+        "group": {
+            "kind": "test",
+            "isDefault": true
+        },
+        "problemMatcher": "$msCompile"
+    }
+    ]
+}
