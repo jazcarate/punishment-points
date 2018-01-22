@@ -10,21 +10,41 @@
                 "build",
                 "${workspaceFolder}/src/PunishmentPointsApp/PunishmentPointsApp.csproj"
             ],
-            "problemMatcher": "$msCompile"
+            "problemMatcher": "$msCompile",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         },
         {
-        "identifier": "test",
-        "label": "Test project",
-        "command": "dotnet",
-        "args": [
-            "test", 
-            "${workspaceFolder}/src/PunishmentPointsApp.Tests/PunishmentPointsApp.Tests.csproj",
-        ],
-        "group": {
-            "kind": "test",
-            "isDefault": true
+            "identifier": "run",
+            "label": "Start the server",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "run",
+                "--project",
+                "${workspaceFolder}/src/PunishmentPointsApp/PunishmentPointsApp.csproj"
+            ],
+            "problemMatcher": "$msCompile",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
         },
-        "problemMatcher": "$msCompile"
-    }
+        {
+            "identifier": "test",
+            "label": "Test project",
+            "command": "dotnet",
+            "args": [
+                "test",
+                "${workspaceFolder}/src/PunishmentPointsApp.Tests/PunishmentPointsApp.Tests.csproj"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "problemMatcher": "$msCompile"
+        }
     ]
 }
