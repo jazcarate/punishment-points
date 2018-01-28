@@ -17,9 +17,11 @@ namespace PunishmentPointsApp.Services
         }
 
         public List<Punishment> Exec(){
-            return message.Entities.ConvertAll(
-                new Converter<Entity, Punishment>(ToPunishment)
-            );
+            return message.Entities
+                .FindAll(entity => entity.Type.Equals("mention"))
+                .ConvertAll(
+                    new Converter<Entity, Punishment>(ToPunishment)
+                );
         }
 
         public Punishment ToPunishment (Entity e){

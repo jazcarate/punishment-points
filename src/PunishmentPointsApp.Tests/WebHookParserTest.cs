@@ -34,6 +34,16 @@ namespace Tests
         }
 
         [Test]
+        public void itIgnoresNonMentionEntities()
+        {
+            IncomingMessage message = new IncomingMessage();
+            message.Entities.Add(new Entity("biz", null, null));
+            List<Punishment> punishments = new WebHookParser(message).Exec();
+            
+            Assert.That(punishments, Is.Empty);
+        }
+
+        [Test]
         public void givenAnIncomingMessageWithMultipleMentionsItCreatesAMultiplePunishmentsThatSteamFromTheSameMessage()
         {
             IncomingMessage message = new IncomingMessage();

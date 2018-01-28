@@ -17,6 +17,7 @@ namespace PunishmentPointsApp.Models
             this.Author = Author;
             this.Recipient = Recipient;
             this.Reason = Reason;
+            this.From = From;
         }
         [Key]
         public virtual int Id { get; protected set; }

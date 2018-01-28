@@ -13,7 +13,7 @@ namespace PunishmentPointsApp.Models
             this.Name = Name;
         }
         [Key]
-        public virtual string Id { get; protected set; }
+        public virtual string Id { get; set; }
         public virtual string Name { get; set; }
     }
 }
