@@ -23,7 +23,7 @@ namespace PunishmentPointsApp.Services
         }
 
         public Punishment ToPunishment (Entity e){
-            return new Punishment(message.From, e.Mentioned, message.Text);
+            return new Punishment(message.From, e.Mentioned, message.Text, message);
         }
     }
     

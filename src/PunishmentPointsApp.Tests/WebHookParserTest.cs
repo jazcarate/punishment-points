@@ -34,7 +34,7 @@ namespace Tests
         }
 
         [Test]
-        public void givenAnIncomingMessageWithMultipleMentionsItCreatesAMultiplePunishments()
+        public void givenAnIncomingMessageWithMultipleMentionsItCreatesAMultiplePunishmentsThatSteamFromTheSameMessage()
         {
             IncomingMessage message = new IncomingMessage();
             TeamMember mentioned1 = new TeamMember("Foo1");
@@ -52,6 +52,8 @@ namespace Tests
             
             Assert.That(punishments[1].Recipient, Is.EqualTo(mentioned2));
             Assert.That(punishments[1].Author, Is.EqualTo(author));
+            
+            Assert.That(punishments[0].From, Is.EqualTo(punishments[1].From));
         }
     }
 }

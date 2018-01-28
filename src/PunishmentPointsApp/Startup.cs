@@ -30,7 +30,7 @@ namespace PunishmentPointsApp
             services.AddLogging(builder => builder.AddConsole());
         }
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
-        {
+        {   
             app.UseDefaultFiles();
             app.UseStaticFiles();
             
