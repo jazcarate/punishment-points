@@ -34,11 +34,12 @@ namespace PunishmentPointsApp.Controllers
         [HttpPost]
         public Reply Insert([FromBody] IncomingMessage message)
         {
+            List<Punishment> toSave = new WebHookParser(message).Exec();
+                
+            toSave.ForEach(punishment => {
+                db.Punishments.Add(punishment);
+            });
             db.IncomingMessages.Add(message);
-            new WebHookParser(message).Exec()
-                .ForEach(punishment =>
-                    db.Punishments.Add(punishment)
-                );
             var count = db.SaveChanges();
             Console.WriteLine("{0} records saved to database", count);
             return new Reply("Saved!");
