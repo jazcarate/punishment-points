@@ -1,20 +1,59 @@
+@font-face {
+    font-family: alagard;
+    src: url('Fonts/alagard.ttf');
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     color: white;
-    font-size: 17px;
+    font-size: 50px;
     font-family: 'Lato';
     -webkit-font-smoothing: antialiased;
     font-variant-ligatures: common-ligatures;
     background-color: black;
+    margin: 0;
+    padding: 0;
 }
 
 footer {
-    background: url("Images/fire.gif") repeat-x ;
-    height: 200px;
+    background: url("Images/fire.gif") repeat-x;
+    background-size: 105px auto;
+    background-position: center bottom;
+    height: 110px;
     position: fixed;
     bottom: 0;
     width: 100%;
 }
 
-.punished {
-    color: red;
+.container-tittle {
+    height: 2em;
+    position: relative;
+}
+
+.tittle {
+    font-size: 80px;
+    font-family: alagard;
+    margin: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+.container-profiles {
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: row; /* make main axis horizontal (default setting) */
+    justify-content: center; /* center items horizontally, in this case */
+    align-items: center; /* center items vertically, in this case */
+}
+
+.profile {
+    width: 32%;
+    display: inline-block;
 }
