@@ -13,6 +13,7 @@ namespace PunishmentPointsApp.Repositories
 
         public DbSet<Punishment> Punishments { get; set; }
         public DbSet<TeamMember> TeamMembers { get; set; }      
+        public DbSet<IncomingMessage> IncomingMessages { get; set; }      
     }
     
 }

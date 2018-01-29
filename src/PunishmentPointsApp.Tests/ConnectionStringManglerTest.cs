@@ -3,10 +3,10 @@ using PunishmentPointsApp.Configurations;
 
 namespace Tests
 {
-    public class ConnectionStringMangler
+    public class ConnectionStringManglerTest
     {
         [Test]
-        public void givvenADataBaseURLItTransformsItToTheCorrectFormat()
+        public void givenADataBaseURLItTransformsItToTheCorrectFormat()
         {
             string connectionString = DatabaseMangler.mangle("postgres://myUsername:myPassword@host:port/myDataBase");
             

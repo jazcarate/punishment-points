@@ -9,14 +9,21 @@ namespace PunishmentPointsApp.Models
     {
         public Punishment()
         {
-            Recipients = new List<TeamMember>();
             CreatedAt = DateTime.Now;
             Id = new Random().Next();
+        }
+        public Punishment(TeamMember Author, TeamMember Recipient, string Reason, IncomingMessage From) : this()
+        {
+            this.Author = Author;
+            this.Recipient = Recipient;
+            this.Reason = Reason;
+            this.From = From;
         }
         [Key]
         public virtual int Id { get; protected set; }
         public virtual TeamMember Author { get; set; }
-        public virtual IList<TeamMember> Recipients { get; set; }
+        public virtual TeamMember Recipient { get; set; }
+        public virtual IncomingMessage From { get; set; }
         public virtual string Reason { get; set; }
         [Column(TypeName = "date")]
         public virtual DateTime CreatedAt { get; set; }
